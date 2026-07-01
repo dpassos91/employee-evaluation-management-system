@@ -36,8 +36,6 @@ A quick look at some of the application's main interfaces.
 
 ![Chat](assets/Chat.png)
 
-![Evaluation](assets/Evaluation.png)
-
 ![Employee Profile](assets/Profile.png)
 
 ## 🛠 Tech Stack
