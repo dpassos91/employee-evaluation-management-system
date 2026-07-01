@@ -1,81 +1,216 @@
-# 🚀 Employee Evaluation Management System
+# 📈 Employee Evaluation Management System
 
-This repository was developed as part of the final project of the **Java Fullstack Development course (AoR - Acertar o Rumo)**, in collaboration with [Critical TechWorks](https://www.criticaltechworks.com/).
+![Java](https://img.shields.io/badge/Java-21-red)
+![Jakarta EE](https://img.shields.io/badge/Jakarta_EE-10-orange)
+![React](https://img.shields.io/badge/React-19-61DAFB)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-blue)
+![WebSockets](https://img.shields.io/badge/WebSockets-Real--Time-success)
 
-## 📋 Table of Contents
+> A full-stack employee evaluation platform built with **Java (Jakarta EE)** and **React**, designed to support performance reviews, training management and internal communication through structured business workflows.
 
-- [Introduction](#introduction)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Future Improvements](#future-improvements)
+![Dashboard](assets/Dashboard.png)
 
-## 🧠 Introduction
+## 📌 Project Overview
 
-This system was designed to support HR and management teams in the creation, evaluation, and tracking of employee assessments in a corporate context. It includes role-based access (admin, manager, employee), evaluation forms, automated notifications, and dashboards with statistics.
+This application centralises employee performance evaluations, training records and organisational workflows into a single platform.
 
-## 🛠️ Technologies Used
+Different user roles (administrators, managers and employees) interact through structured evaluation cycles, training management, real-time communication and configurable system settings.
 
-- **Backend:** Java, Java EE, RESTful APIs  
-- **Frontend:** React.js, Tailwind CSS  
-- **Database:** PostgreSQL  
-- **Testing:** JUnit  
-- **Other:** WebSockets, Zustand (state management), i18n (internationalization)
+## ✨ Highlights
 
-## 🖥️ Installation
-
-To run the project locally:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/dpassos91/employee-evaluation-system.git
-   cd employee-evaluation-system
-   ```
-
-2. Set up the **PostgreSQL** database and configure credentials in `application.properties`.
-
-3. Navigate to the `/backend` folder and run the Spring Boot application.
-
-4. Navigate to the `/frontend` folder and start the React app:
-   ```bash
-   npm install
-   npm run dev
-   ```
-
-5. Open your browser and navigate to:
-   - Frontend: https://localhost:3000  
-   - Backend: http://localhost:8443  
-
-> Ensure the PostgreSQL database is correctly connected.
-
-## ✅ Features
-
-- 🔐 Secure login with session handling  
-- 👤 Role-based access: Admin, Manager, User  
-- 📝 Evaluation creation and score assignment  
-- 👥 Reviewer delegation and form progress tracking  
-- 💬 Real-time chat and notifications (WebSockets)  
-- 📊 Responsive dashboard with statistics and filters  
-- 🌍 Full support for multiple languages (EN, PT)  
+- 🔐 Secure role-based authentication
+- 📈 Complete employee evaluation workflow
+- 👥 Employee & manager administration
+- 🎓 Training management
+- 💬 Real-time chat using WebSockets
+- 🔔 Live notifications
+- 📄 CSV & PDF exports
+- ⚙️ Configurable application settings
 
 ## 📸 Screenshots
 
-Here is a preview of the application:
+A quick look at some of the application's main interfaces.
 
-![Homepage Screenshot](assets/Login.png)  
-![Dashboard Screenshot](assets/Dashboard.png)  
-![Profile Screenshot](assets/Profile.png)  
+![Dashboard](assets/Dashboard.png)
+
+![Evaluation](assets/Evaluation.png)
+
+![Employee Profile](assets/Profile.png)
+
+## 🛠 Tech Stack
+
+### Backend
+
+- Java 21
+- Jakarta EE 10
+- JAX-RS
+- JPA / Hibernate
+- WebSockets
+- BCrypt
+- Log4j2
+- Maven
+- WildFly
+- JUnit
+- Mockito
+
+### Frontend
+
+- React 19
+- React Router
+- Zustand
+- react-intl
+- Tailwind CSS
+- React Toastify
+
+### Database
+
+- PostgreSQL
+
+## 🏗 Architecture
+
+```text
+                          React Frontend
+                                 │
+        ┌────────────────────────┼────────────────────────┐
+        │                        │                        │
+   React Router              Zustand                 react-intl
+   Navigation            State Management        Internationalization
+        │                        │                        │
+        └────────────────────────┼────────────────────────┘
+                                 │
+                    REST API + WebSockets
+                                 │
+                                 ▼
+                  Jakarta EE Backend (WildFly)
+                                 │
+        ┌────────────────────────┼────────────────────────┐
+        │                        │                        │
+   REST Services             WebSocket              Filters / Config
+     (JAX-RS)                 Endpoint          Auth, CORS, Context
+        │                        │                        │
+        └────────────────────────┼────────────────────────┘
+                                 │
+                         Business Beans
+                                 │
+        ┌──────────────┬─────────┼─────────┬──────────────┐
+        │              │         │         │              │
+      Users       Evaluations  Courses  Messages     Notifications
+        │              │         │         │              │
+        └──────────────┴─────────┼─────────┴──────────────┘
+                                 │
+                          DAOs / DTOs
+                                 │
+                         JPA / Hibernate
+                                 │
+                                 ▼
+                            PostgreSQL
+```
+
+The backend follows a layered architecture separating REST resources, business logic, persistence, configuration and real-time communication.
+
+The frontend is organised into reusable pages, components, hooks, stores, API modules and translation files.
+
+## 📂 Project Structure
+
+```text
+employee-evaluation-management-system/
+│
+├── backend/
+│   ├── bean/
+│   ├── config/
+│   ├── dao/
+│   ├── dto/
+│   ├── entity/
+│   ├── filter/
+│   ├── service/
+│   ├── util/
+│   └── websocket/
+│
+├── frontend/
+│   ├── api/
+│   ├── components/
+│   ├── hooks/
+│   ├── pages/
+│   ├── stores/
+│   ├── translations/
+│   ├── utils/
+│   └── websocket/
+│
+└── README.md
+```
+
+## 🚀 Installation
+
+### Prerequisites
+
+- Java 21
+- Maven
+- PostgreSQL
+- WildFly
+- Node.js
+- npm
+
+### Clone the repository
+
+```bash
+git clone https://github.com/dpassos91/employee-evaluation-management-system.git
+cd employee-evaluation-management-system
+```
+
+### Backend
+
+```bash
+cd backend
+mvn clean package
+```
+
+Deploy the generated WAR file to WildFly and configure the datasource:
+
+```text
+java:/postgresDS
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+## ⭐ Technical Highlights
+
+- Layered Jakarta EE architecture
+- RESTful API design
+- DTO and DAO patterns
+- Role-based authorization
+- Token-based authentication
+- Password hashing with BCrypt
+- WebSocket-based real-time communication
+- Evaluation cycle management
+- CSV and PDF report generation
+- Zustand state management
+- Internationalization with react-intl
+- PostgreSQL persistence through JPA/Hibernate
+
+## 📚 What I Learned
+
+Developing this project gave me valuable experience designing business-oriented software where multiple user roles interact through structured workflows.
+
+Beyond strengthening my full-stack development skills with Java, React and PostgreSQL, it reinforced the importance of designing maintainable architectures, modelling real-world business processes and building scalable applications with a clear separation of responsibilities.
 
 ## 🔭 Future Improvements
 
-- 📤 Export evaluations to PDF or Excel  
-- 🔗 Integration with HR systems (e.g. BambooHR)  
-- 📈 Advanced analytics and performance trends  
-- ⏰ Reminder system for incomplete evaluations  
+- Docker support
+- CI/CD with GitHub Actions
+- OpenAPI / Swagger documentation
+- Email notifications
+- Analytics dashboard
+- Cloud deployment
+- Performance optimisation
+- Expanded automated testing
 
 ---
 
-**Disclaimer:**  
-This project was developed for educational purposes.
+Originally developed as the final project of the **Java Fullstack Development Programme (Acertar o Rumo – University of Coimbra)**.
 
