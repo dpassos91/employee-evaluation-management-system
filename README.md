@@ -5,6 +5,7 @@
 ![React](https://img.shields.io/badge/React-19-61DAFB)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-blue)
 ![WebSockets](https://img.shields.io/badge/WebSockets-Real--Time-success)
+![RBAC](https://img.shields.io/badge/RBAC-Role--Based-blueviolet)
 
 > A full-stack employee evaluation platform built with **Java (Jakarta EE)** and **React**, designed to support performance reviews, training management and internal communication through structured business workflows.
 
@@ -20,8 +21,8 @@ Different user roles (administrators, managers and employees) interact through s
 
 - 🔐 Secure role-based authentication
 - 📈 Complete employee evaluation workflow
-- 👥 Employee & manager administration
-- 🎓 Training management
+- 👥 Employee lifecycle management
+- 🎓 Training & course management
 - 💬 Real-time chat using WebSockets
 - 🔔 Live notifications
 - 📄 CSV & PDF exports
@@ -195,9 +196,9 @@ npm start
 
 ## 📚 What I Learned
 
-Developing this project gave me valuable experience designing business-oriented software where multiple user roles interact through structured workflows.
+Building this project challenged me to model a real business domain rather than simply implementing isolated features.
 
-Beyond strengthening my full-stack development skills with Java, React and PostgreSQL, it reinforced the importance of designing maintainable architectures, modelling real-world business processes and building scalable applications with a clear separation of responsibilities.
+Working with different user roles, evaluation workflows and training management strengthened my understanding of software architecture, domain modelling and full-stack application development using Java and React.
 
 ## 🔭 Future Improvements
 
@@ -212,5 +213,5 @@ Beyond strengthening my full-stack development skills with Java, React and Postg
 
 ---
 
-Originally developed as the final project of the **Java Fullstack Development Programme (Acertar o Rumo – University of Coimbra)**.
+Originally developed as the final project of the Java Fullstack Development Programme (Acertar o Rumo – University of Coimbra), in collaboration with an industry partner.
 
