@@ -32,6 +32,8 @@ Different user roles (administrators, managers and employees) interact through s
 
 A quick look at some of the application's main interfaces.
 
+![Login](assets/Login.png)
+
 ![Dashboard](assets/Dashboard.png)
 
 ![Evaluation](assets/Evaluation.png)
