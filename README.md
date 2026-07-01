@@ -34,7 +34,7 @@ A quick look at some of the application's main interfaces.
 
 ![Login](assets/Login.png)
 
-![Dashboard](assets/Dashboard.png)
+![Chat](assets/Chat.png)
 
 ![Evaluation](assets/Evaluation.png)
 
